@@ -10,21 +10,20 @@ import { catchError } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  pageTitle = 'recipe-clipper';
-  loading = true;
-
-  private errorMessageSubject = new Subject<string>();
-  errorMessage$ = this.errorMessageSubject.asObservable();
 
   get isLoggedIn(): boolean {
     return this.authService.loggedIn;
   }
 
 
-  constructor(private authService: AuthService,
-              private router: Router) {
+  constructor(private authService: AuthService) {
 
   }
+  pageTitle = 'recipe-clipper';
+  loading = true;
+
+  private errorMessageSubject = new Subject<string>();
+  errorMessage$ = this.errorMessageSubject.asObservable();
 
   userName$ = this.authService.userProfile$.pipe(
     catchError(err => {
@@ -32,7 +31,6 @@ export class AppComponent {
       return EMPTY;
     })
   );
-
 
   logIn(): void {
     this.authService.login();
