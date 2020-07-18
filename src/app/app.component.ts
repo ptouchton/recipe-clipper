@@ -9,12 +9,10 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
   title = 'recipe-clipper';
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.http.get('http://localhost:9000/.netlify/functions/products').subscribe((response) => {
-      console.log('response: ', response);
-    });
   }
 
+  
 }
