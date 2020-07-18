@@ -11,7 +11,6 @@ exports.handler = async (event, context) => {
 	}
 
 	try {
-		console.log(`here: ${client.context}`);
 		const products = await service.getProducts()
 		return {
 			statusCode: 200,

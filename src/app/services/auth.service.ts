@@ -54,7 +54,7 @@ export class AuthService {
     );
   }
 
-  private localAuthSetup() {
+  private localAuthSetup(): void {
     // This should only be called on app initialization
     // Set up local authentication streams
     const checkAuth$ = this.isAuthenticated$.pipe(
@@ -71,7 +71,7 @@ export class AuthService {
     checkAuth$.subscribe();
   }
 
-  login(redirectPath: string = '/') {
+  login(redirectPath: string = '/'): void {
     // A desired redirect path can be passed to login method
     // (e.g., from a route guard)
     // Ensure Auth0 client instance exists
@@ -84,7 +84,7 @@ export class AuthService {
     });
   }
 
-  private handleAuthCallback() {
+  private handleAuthCallback(): void {
     // Call when app reloads after user logs in with Auth0
     const params = window.location.search;
     if (params.includes('code=') && params.includes('state=')) {
@@ -112,7 +112,7 @@ export class AuthService {
     }
   }
 
-  logout() {
+  logout(): void {
     // Ensure Auth0 client instance exists
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log out
@@ -121,5 +121,12 @@ export class AuthService {
         returnTo: `${window.location.origin}`
       });
     });
+
   }
+  getTokenSilently$(options?): Observable<string> {
+    return this.auth0Client$.pipe(
+      concatMap((client: Auth0Client) => from(client.getTokenSilently(options)))
+    );
+  }
+
 }
