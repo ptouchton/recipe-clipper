@@ -5,7 +5,7 @@ const service = new ProductService({ client })
 
 exports.handler = async (event, context) => {
 	console.log('Function `products` invoked')
-
+    console.log(context);
 	if (event.httpMethod === 'OPTIONS') {
 		return {
 			statusCode: 200,
