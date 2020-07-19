@@ -19,6 +19,7 @@ exports.handler = async (event, context) => {
 	};
 
 	try {
+		
 		const products = await service.getProducts()
 		return {
 			statusCode: 200,
