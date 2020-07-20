@@ -14,7 +14,8 @@ export class AuthService {
     createAuth0Client({
       domain: 'dev-1ri5oc4g.us.auth0.com',
       client_id: 'OtPGHL85c4UamCat8aRVtq2j4kgbbrxE',
-      redirect_uri: `${window.location.origin}`
+      redirect_uri: `${window.location.origin}`,
+      audience: 'http://localhost:9000/.netlify/functions',
     })
   ) as Observable<Auth0Client>).pipe(
     shareReplay(1), // Every subscription receives the same shared value

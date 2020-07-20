@@ -68,8 +68,12 @@ exports.handler = async (event, context) => {
 
 		console.log(`token: ${accessToken}`);
 
-		const kid = '';
-		const signingKey = null;
+		 // This could fail.  If it does handle as 401 as the token is invalid.
+		 var decodedToken = jwt.decode(accessToken, {complete: true});
+		 console.log(`decoded token: ${decodedToken.header.kid}`);
+		 
+		const kid = decodedToken.header.kid;
+		let signingKey = null;
 
 		client.getSigningKey(kid, (err, key) => {
 			signingKey = key.getPublicKey();
@@ -77,7 +81,7 @@ exports.handler = async (event, context) => {
 			console.log(`Key: ${signingKey}`);
 
 			const decoded = jwt.verify(accessToken, signingKey);
-			console.log(decoded);
+			console.log(`verified: ${decoded}`);
 
 			
 		});
