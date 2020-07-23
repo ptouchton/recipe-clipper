@@ -80,7 +80,7 @@ exports.handler = async (event, context) => {
 
 			console.log(`Key: ${signingKey}`);
 
-			const decoded = jwt.verify(accessToken, signingKey);
+			const decoded = jwt.verify(accessToken, signingKey,{ audience: authConfig.audience });
 			console.log(`verified: ${decoded}`);
 
 			
