@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { catchError, map } from 'rxjs/operators';
-import { EMPTY, Subject, pipe } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { EMPTY, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
