@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  productsApi: 'https://recipe-clipper.netlify.app/.netlify/functions/products'
 };

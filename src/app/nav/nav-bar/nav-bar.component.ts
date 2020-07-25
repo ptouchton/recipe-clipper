@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { catchError, map } from 'rxjs/operators';
 import { EMPTY, Subject, pipe } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,7 +27,7 @@ export class NavBarComponent {
   );
 
   pingApi(): void {
-    this.http.get('http://localhost:9000/.netlify/functions/products').subscribe(
+    this.http.get(environment.productsApi).subscribe(
       res => this.responseJson = res
     );
   }
