@@ -1,12 +1,25 @@
 <div style="height: 80vh;">
     <mat-toolbar color="primary">
       <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true">
           <mat-icon>menu</mat-icon>
         </button>
         <span>Recipe Clipper</span>
         <span class="menu-spacer"></span>
-        <div fxShow="true" fxHide.lt-md>
+        <button mat-icon-button (click)="pingApi()" fxShow="true" fxHide.lt-md>
+          Ping API
+        </button>
+        <span class="menu-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="per">
+          <mat-icon>person_outline</mat-icon>
+        </button>
+        <mat-menu #per="matMenu">
+          <button mat-menu-item (click)="logout()" *ngIf="auth.loggedIn">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sign out</span>
+          </button>
+        </mat-menu>
+        <div fxShow="false" fxHide.lt-md>
           <a *ngIf="userName$ | async as userName">Welcome {{ userName.name }}</a>
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
           <a (click)="auth.login()" *ngIf="!auth.loggedIn" mat-button>Login</a>
@@ -20,15 +33,12 @@
         <mat-nav-list>
           <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
           <a (click)="pingApi()" href="#" mat-list-item>Ping API</a>
-          <a href="#" mat-list-item>Menu Item 2</a>
-          <a href="#" mat-list-item>Menu Item 3</a>
-          <a href="#" mat-list-item>Menu Item 4</a>
-          <a href="#" mat-list-item>Menu Item 5</a>
-          <a href="#"mat-list-item>Menu Item 6</a>
+          <a (click)="auth.login()" *ngIf="!auth.loggedIn" mat-list-item>Login</a>
+          <a (click)="auth.logout()" *ngIf="auth.loggedIn" mat-list-item>Logout</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill>
-        <!-- <span *ngIf="testResult$ | async as results">{{results}}</span> -->
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>
