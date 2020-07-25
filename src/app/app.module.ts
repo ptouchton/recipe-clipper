@@ -14,11 +14,13 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { FavoritesComponent } from './favorites/favorites.component';
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatListModule,
     FlexLayoutModule,
     HttpClientModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
