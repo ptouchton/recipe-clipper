@@ -16,6 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { RecipeData } from './services/recipe-data';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,8 @@ import { MatCardModule } from '@angular/material/card';
     FlexLayoutModule,
     HttpClientModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientInMemoryWebApiModule.forRoot(RecipeData)
   ],
   providers: [],
   bootstrap: [AppComponent]
