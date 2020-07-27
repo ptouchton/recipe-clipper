@@ -18,12 +18,16 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RecipeData } from './services/recipe-data';
+import { RecipeCategoryDisplayPipe } from './pipes/recipe-category-display.pipe';
+import { RecipeDetailComponent } from './recipes/recipe-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    RecipeCategoryDisplayPipe,
+    RecipeDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './utilities/interceptor.service';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { RecipeDetailComponent } from './recipes/recipe-detail.component';
 
 const routes: Routes = [];
 
@@ -10,6 +11,7 @@ const routes: Routes = [];
 @NgModule({
   imports: [RouterModule.forRoot([
     { path: 'favorites', component: FavoritesComponent },
+    { path: 'recipeDetail/:id', component: RecipeDetailComponent },
     { path: '', redirectTo: 'favorites', pathMatch: 'full'},
   ])],
   exports: [RouterModule],
