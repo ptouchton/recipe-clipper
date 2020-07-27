@@ -34,8 +34,9 @@
           <a (click)="pingApi()" href="#" mat-list-item>Ping API</a>
         </mat-nav-list>
       </mat-sidenav>
-      <mat-sidenav-content fxFlexFill>
-        <router-outlet></router-outlet>
+      <mat-sidenav-content fxFlexFill 
+           [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   </div>

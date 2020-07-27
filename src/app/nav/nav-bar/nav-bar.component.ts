@@ -4,11 +4,13 @@ import { catchError } from 'rxjs/operators';
 import { EMPTY, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { fadeAnimation } from '../../animations/fade.animation';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
+  animations: [fadeAnimation]
 })
 export class NavBarComponent {
 
