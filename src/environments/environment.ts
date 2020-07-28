@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  productsApi: 'http://localhost:9000/.netlify/functions/products'
+  productsApi: 'http://localhost:9000/.netlify/functions/products',
+  recipesApi: 'http://localhost:9000/.netlify/functions/recipes'
 };
 
 /*
