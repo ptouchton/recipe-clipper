@@ -31,7 +31,7 @@
       <mat-sidenav #sidenav>
         <mat-nav-list>
           <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-          <a (click)="pingApi()" href="#" mat-list-item>Ping API</a>
+          <a [routerLink]="['/pingApi']" (click)="sidenav.close()" mat-list-item>Ping API</a>
         </mat-nav-list>
       </mat-sidenav>
       <mat-sidenav-content fxFlexFill 

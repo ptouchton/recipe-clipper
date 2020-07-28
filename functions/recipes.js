@@ -24,12 +24,12 @@ exports.handler = async (event, context) => {
 		
 		const token = await auth.verify(event);
 
-		const products = await service.getRecipes();
+		const recipes = await service.getRecipes();
 
 		return {
 			statusCode: 200,
 			headers,
-			body: JSON.stringify(products),
+			body: JSON.stringify(recipes),
 		}
 
 	} catch (error) {

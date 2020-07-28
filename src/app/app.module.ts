@@ -20,6 +20,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { RecipeData } from './services/recipe-data';
 import { RecipeCategoryDisplayPipe } from './pipes/recipe-category-display.pipe';
 import { RecipeDetailComponent } from './recipes/recipe-detail.component';
+import { PingApiComponent } from './utilities/ping-api/ping-api.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RecipeDetailComponent } from './recipes/recipe-detail.component';
     FavoritesComponent,
     RecipeCategoryDisplayPipe,
     RecipeDetailComponent,
+    PingApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,9 @@ import { RecipeDetailComponent } from './recipes/recipe-detail.component';
     HttpClientModule,
     MatMenuModule,
     MatCardModule,
-    HttpClientInMemoryWebApiModule.forRoot(RecipeData)
+    HttpClientInMemoryWebApiModule.forRoot(RecipeData, {
+      passThruUnknownUrl: true
+     })
   ],
   providers: [],
   bootstrap: [AppComponent]

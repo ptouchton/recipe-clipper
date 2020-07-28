@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
 import { Subject, EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-favorites',
@@ -12,7 +14,7 @@ export class FavoritesComponent implements OnInit {
   private errorMessageSubject = new Subject<string>();
   errorMessage$ = this.errorMessageSubject.asObservable();
 
-  favoriteRecipes$ = this.recipesSvc.favoriteRecipes$
+  favoriteRecipes$ =  this.recipesSvc.favoriteRecipes$
     .pipe(
       catchError(err => {
         this.errorMessageSubject.next(err);
@@ -20,10 +22,10 @@ export class FavoritesComponent implements OnInit {
       })
     );
 
-
   constructor(private recipesSvc: RecipesService) { }
 
   ngOnInit(): void {
+
   }
 
 
