@@ -1,0 +1,9 @@
+$rcpl-nature-primary: mat-palette($mat-brown, 700, 300, 900);
+$rcpl-nature-accent: mat-palette($mat-deep-purple, 300);
+$rcpl-nature-warn: mat-palette($mat-red, 600);
+
+$rcpl-nature-theme: mat-light-theme(
+  $rcpl-nature-primary,
+  $rcpl-nature-accent,
+  $rcpl-nature-warn
+);

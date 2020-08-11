@@ -1,0 +1,9 @@
+$rcpl-light-primary: mat-palette($mat-grey, 200, 500, 300);
+$rcpl-light-accent: mat-palette($mat-brown, 200);
+$rcpl-light-warn: mat-palette($mat-deep-orange, 200);
+
+$rcpl-light-theme: mat-light-theme(
+  $rcpl-light-primary,
+  $rcpl-light-accent,
+  $rcpl-light-warn
+);

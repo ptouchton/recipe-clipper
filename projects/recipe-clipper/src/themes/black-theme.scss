@@ -1,0 +1,9 @@
+$rcpl-black-primary: mat-palette($mat-grey, 700, 300, 900);
+$rcpl-black-accent: mat-palette($mat-blue-grey, 400);
+$rcpl-black-warn: mat-palette($mat-red, 500);
+
+$rcpl-black-theme: mat-dark-theme(
+  $rcpl-black-primary,
+  $rcpl-black-accent,
+  $rcpl-black-warn
+);

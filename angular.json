@@ -1,38 +1,36 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "cli": {
-    "packageManager": "yarn"
-  },
   "newProjectRoot": "projects",
   "projects": {
     "recipe-clipper": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
+          "changeDetection": "OnPush",
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
+      "root": "projects/recipe-clipper",
+      "sourceRoot": "projects/recipe-clipper/src",
+      "prefix": "rcpl",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/recipe-clipper",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "index": "projects/recipe-clipper/src/index.html",
+            "main": "projects/recipe-clipper/src/main.ts",
+            "polyfills": "projects/recipe-clipper/src/polyfills.ts",
+            "tsConfig": "projects/recipe-clipper/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/recipe-clipper/src/favicon.ico",
+              "projects/recipe-clipper/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "projects/recipe-clipper/src/styles-app-loading.scss",
+              "projects/recipe-clipper/src/styles.scss"
             ],
             "scripts": []
           },
@@ -40,8 +38,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/recipe-clipper/src/environments/environment.ts",
+                  "with": "projects/recipe-clipper/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -54,14 +52,29 @@
               "buildOptimizer": true,
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "type": "bundle",
+                  "name": "polyfills",
+                  "baseline": "150kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "styles",
+                  "baseline": "280kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
+                },
+                {
+                  "type": "bundle",
+                  "name": "main",
+                  "baseline": "1024kb",
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -87,38 +100,46 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/recipe-clipper/src/test.ts",
+            "polyfills": "projects/recipe-clipper/src/polyfills.ts",
+            "tsConfig": "projects/recipe-clipper/tsconfig.spec.json",
+            "karmaConfig": "projects/recipe-clipper/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/recipe-clipper/src/favicon.ico",
+              "projects/recipe-clipper/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.scss"
+              "projects/recipe-clipper/src/styles-app-loading.scss",
+              "projects/recipe-clipper/src/styles.scss"
             ],
             "scripts": []
+          },
+          "configurations": {
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/recipe-clipper/src/environments/environment.ts",
+                  "with": "projects/recipe-clipper/src/environments/environment.test.ts"
+                }
+              ]
+            }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "projects/recipe-clipper/tsconfig.app.json",
+              "projects/recipe-clipper/tsconfig.spec.json",
+              "projects/recipe-clipper/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
+            "protractorConfig": "projects/recipe-clipper/e2e/protractor.conf.js",
             "devServerTarget": "recipe-clipper:serve"
           },
           "configurations": {
@@ -130,5 +151,8 @@
       }
     }
   },
-  "defaultProject": "recipe-clipper"
+  "defaultProject": "recipe-clipper",
+  "cli": {
+    "analytics": false
+  }
 }
