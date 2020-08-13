@@ -23,5 +23,8 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress']
-  }
+  },
+  productsApi: 'http://localhost:9000/.netlify/functions/products',
+  recipesApi: 'http://localhost:9000/.netlify/functions/recipes',
+  redirectUrl: 'http://localhost:4200/call-back'
 };

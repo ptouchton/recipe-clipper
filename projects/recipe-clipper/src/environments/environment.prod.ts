@@ -19,5 +19,8 @@ export const environment = {
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript'],
     cypress: packageJson.devDependencies['cypress']
-  }
+  },
+  productsApi: 'https://recipe-clipper.netlify.app/.netlify/functions/products',
+  recipesApi: 'https://recipe-clipper.netlify.app/.netlify/functions/recipes',
+  redirectUrl: 'https://recipe-clipper.netlify.app/call-back'
 };

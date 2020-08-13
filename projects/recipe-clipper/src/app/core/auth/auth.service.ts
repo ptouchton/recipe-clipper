@@ -11,6 +11,8 @@ import {
 } from 'rxjs';
 import { tap, catchError, concatMap, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { env } from 'process';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +23,7 @@ export class AuthService {
     createAuth0Client({
       domain: 'dev-1ri5oc4g.us.auth0.com',
       client_id: 'OtPGHL85c4UamCat8aRVtq2j4kgbbrxE',
-      redirect_uri: `${window.location.origin}`,
+      redirect_uri: environment.redirectUrl,
       audience: 'http://localhost:9000/.netlify/functions'
     })
   ) as Observable<Auth0Client>).pipe(
@@ -86,7 +88,7 @@ export class AuthService {
     this.auth0Client$.subscribe((client: Auth0Client) => {
       // Call method to log in
       client.loginWithRedirect({
-        redirect_uri: `${window.location.origin}`,
+        redirect_uri: environment.redirectUrl,
         appState: { target: redirectPath }
       });
     });

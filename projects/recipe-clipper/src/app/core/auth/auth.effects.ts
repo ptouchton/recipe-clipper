@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { ofType, createEffect, Actions } from '@ngrx/effects';
 import { tap, exhaustMap, map, catchError } from 'rxjs/operators';
 
-import { LocalStorageService } from '../local-storage/local-storage.service';
 
 import { authLogin, authLogout, authComplete, authSuccess, authFailure } from './auth.actions';
 import { AuthService } from './auth.service';
 import { of } from 'rxjs';
+import { NotificationService } from '../notifications/notification.service';
 
 export const AUTH_KEY = 'AUTH';
 
@@ -15,7 +15,7 @@ export const AUTH_KEY = 'AUTH';
 export class AuthEffects {
   constructor(
     private actions$: Actions,
-    private localStorageService: LocalStorageService,
+    private notificationsService: NotificationService,
     private router: Router,
     private auth: AuthService
   ) { }
@@ -24,7 +24,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(authLogin),
-        tap(() => this.auth.login())
+        tap(() => this.auth.login('/call-back'))
       ),
     { dispatch: false }
   );
@@ -40,7 +40,7 @@ export class AuthEffects {
                 return authSuccess();
               }
             }),
-            catchError(err => of(authFailure()))
+            catchError(err => of(authFailure(err)))
           )
         })
       )
@@ -56,6 +56,16 @@ export class AuthEffects {
       })
     ),
     { dispatch: false }
+  );
+
+  loginFailure = createEffect(
+    () => 
+    this.actions$.pipe(
+      ofType(authFailure),
+      tap((payload) => {
+        this.notificationsService.error(payload.error);
+      })
+    )
   );
 
   logout = createEffect(
