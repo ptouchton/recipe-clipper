@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { CallBackComponent } from './app/call-back.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'about',
     pathMatch: 'full'
+  },
+  {
+    path: 'call-back',
+    component: CallBackComponent
   },
   {
     path: 'about',

@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+import { CallBackComponent } from './app/call-back.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { AppComponent } from './app/app.component';
     // app
     AppRoutingModule
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, CallBackComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
