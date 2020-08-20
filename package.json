@@ -17,7 +17,7 @@
     "format:write": "prettier projects/**/*.{ts,json,md,scss} --write",
     "format:test": "prettier projects/**/*.{ts,json,md,scss} --list-different",
     "release": "standard-version && git push --follow-tags origin master",
-    "analyze": "npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/angular-ngrx-material-starter/stats-es2015.json",
+    "analyze": "npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/recipe-clipper/stats-es2015.json",
     "server": "node ./projects/server/server.js",
     "fn:serve": "netlify-lambda serve functions",
     "fn:build": "netlify-lambda build functions"
