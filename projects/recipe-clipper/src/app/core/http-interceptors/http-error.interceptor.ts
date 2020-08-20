@@ -7,7 +7,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError, EMPTY } from 'rxjs';
-import { mergeMap, catchError } from 'rxjs/operators';
+import { mergeMap, catchError, tap } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
 
 /** Passes HttpErrorResponse to application-wide error handler */
@@ -20,22 +20,15 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    return this.auth.getTokenSilently$().pipe(
-      mergeMap(token => {
-        const tokenReq = request.clone({
-          setHeaders: { Authorization: `Bearer ${token}` }
-        });
-        return next.handle(tokenReq);
-      }),
-      catchError(err => {
-        if (err instanceof HttpErrorResponse) {
-          const appErrorHandler = this.injector.get(ErrorHandler);
-          appErrorHandler.handleError(err);
-          return EMPTY;
+    return next.handle(request).pipe(
+      tap({
+        error: (err: any) => {
+          if (err instanceof HttpErrorResponse) {
+            const appErrorHandler = this.injector.get(ErrorHandler);
+            appErrorHandler.handleError(err);
+          }
         }
-
-      }
-      )
-    )
+      })
+    );
   }
 }
