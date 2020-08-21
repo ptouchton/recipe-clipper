@@ -22,5 +22,5 @@ export const environment = {
   },
   productsApi: 'https://recipe-clipper.netlify.app/.netlify/functions/products',
   recipesApi: 'https://recipe-clipper.netlify.app/.netlify/functions/recipes',
-  redirectUrl: 'https://recipe-clipper.netlify.app/#/call-back'
+  redirectUrl: 'https://recipe-clipper.netlify.app/call-back'
 };
