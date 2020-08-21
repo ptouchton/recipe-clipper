@@ -13,6 +13,11 @@ const routes: Routes = [
     component: CallBackComponent
   },
   {
+    path: 'my-recipes',
+    loadChildren: () =>
+      import('./features/my-recipes/my-recipes.module').then((m) => m.MyRecipesModule)
+  },  
+  {
     path: 'about',
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule)

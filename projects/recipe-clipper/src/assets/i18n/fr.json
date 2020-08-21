@@ -37,6 +37,7 @@
   "rcpl.menu.login": "Connexion",
   "rcpl.menu.logout": "Déconnexion",
   "rcpl.menu.settings": "Paramètres",
+  "rcpl.menu.myrecipes": "Mes recettes",
   "rcpl.settings.animations.elements": "Les éléments de la page de navigation glissent vers le haut",
   "rcpl.settings.animations.page": "Transition de la page entière lors de la navigation",
   "rcpl.settings.animations.title": "Animations",
@@ -60,6 +61,6 @@
   "rcpl.settings.themes.sticky-header": "Entête fixe",
   "rcpl.settings.themes.title": "Thèmes",
   "rcpl.settings.title": "Paramètres",
-  "rcpl.title.long": "Kit de démarrage Angular NgRx Material",
-  "rcpl.title.short": "Kit de démarrage"
+  "rcpl.title.long": "Recette Clipper",
+  "rcpl.title.short": "Recette Clipper"
 }

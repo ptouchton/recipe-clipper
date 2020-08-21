@@ -37,6 +37,7 @@
   "rcpl.menu.login": "Prihlásenie",
   "rcpl.menu.logout": "Odhlásenie",
   "rcpl.menu.settings": "Nastavenia",
+  "rcpl.menu.myrecipes": "Moje recepty",
   "rcpl.settings.animations.elements": "Animácia elementov stránky pri navigácii",
   "rcpl.settings.animations.page": "Animácia celej stránky pri navigácii",
   "rcpl.settings.animations.title": "Animácie",
@@ -60,6 +61,6 @@
   "rcpl.settings.themes.sticky-header": "",
   "rcpl.settings.themes.title": "Témy",
   "rcpl.settings.title": "Nastavenia",
-  "rcpl.title.long": "Angular NgRx Material Štartér",
-  "rcpl.title.short": "Angular Štartér"
+  "rcpl.title.long": "Receptor Clipper",
+  "rcpl.title.short": "Receptor Clipper"
 }

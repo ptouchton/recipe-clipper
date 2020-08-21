@@ -33,7 +33,9 @@ export class AppComponent implements OnInit {
   year = new Date().getFullYear();
   logo = require('../../assets/logo.png').default;
   languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
-  navigation = [];
+  navigation = [
+    { link: 'my-recipes', label: 'rcpl.menu.myrecipes' }
+  ];
   // navigation = [
   //   { link: 'about', label: 'rcpl.menu.about' },
   //   { link: 'feature-list', label: 'rcpl.menu.features' },

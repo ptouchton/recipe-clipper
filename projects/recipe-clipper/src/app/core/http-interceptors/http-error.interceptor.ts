@@ -6,8 +6,8 @@ import {
   HttpRequest,
   HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, throwError, EMPTY } from 'rxjs';
-import { mergeMap, catchError, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
 
 /** Passes HttpErrorResponse to application-wide error handler */

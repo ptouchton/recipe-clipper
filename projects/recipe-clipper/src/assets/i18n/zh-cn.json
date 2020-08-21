@@ -37,6 +37,7 @@
   "rcpl.menu.login": "登录",
   "rcpl.menu.logout": "退出",
   "rcpl.menu.settings": "设置",
+  "rcpl.menu.myrecipes": "我的食谱",
   "rcpl.settings.animations.elements": "导航时页面上的元素渐入效果",
   "rcpl.settings.animations.page": "导航时整体页面过渡效果",
   "rcpl.settings.animations.title": "动画",
@@ -60,6 +61,6 @@
   "rcpl.settings.themes.sticky-header": "固定头部",
   "rcpl.settings.themes.title": "主题",
   "rcpl.settings.title": "设置",
-  "rcpl.title.long": "Angular NgRx Material 起步模版",
-  "rcpl.title.short": "Angular 起步模版"
+  "rcpl.title.long": "配方剪",
+  "rcpl.title.short": "配方剪"
 }

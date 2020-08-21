@@ -37,6 +37,7 @@
   "rcpl.menu.login": "Anmelden",
   "rcpl.menu.logout": "Abmelden",
   "rcpl.menu.settings": "Einstellungen",
+  "rcpl.menu.myrecipes": "Meine Rezepte",
   "rcpl.settings.animations.elements": "Navigation Seitenelemente nach oben schieben",
   "rcpl.settings.animations.page": "Navigation ganzer Seitenübergang",
   "rcpl.settings.animations.title": "Animationen",
@@ -60,6 +61,6 @@
   "rcpl.settings.themes.sticky-header": "",
   "rcpl.settings.themes.title": "Thema",
   "rcpl.settings.title": "Einstellungen",
-  "rcpl.title.long": "Angular NgRx Material Vorlage",
-  "rcpl.title.short": "Angular Vorlage"
+  "rcpl.title.long": "Rezept Clipper",
+  "rcpl.title.short": "Rezept Clipper"
 }

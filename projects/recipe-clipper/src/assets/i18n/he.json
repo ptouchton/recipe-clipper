@@ -37,6 +37,7 @@
   "rcpl.menu.login": "התחברות",
   "rcpl.menu.logout": "התנתקות",
   "rcpl.menu.settings": "הגדרות",
+  "rcpl.menu.myrecipes": "המתכונים שלי",
   "rcpl.settings.animations.elements": "בזמן ניווט אלמנטים זיזים כלפי מעלה",
   "rcpl.settings.animations.page": "טרנזיציה מלאה בניוט לדף",
   "rcpl.settings.animations.title": "אנימציות",
@@ -60,6 +61,6 @@
   "rcpl.settings.themes.sticky-header": "חלק עליון נצמד",
   "rcpl.settings.themes.title": "ערכאות נושא",
   "rcpl.settings.title": "הגדרות",
-  "rcpl.title.long": "ngrx ערכת התחלה לפרויקט אנגולר מטריאל ו",
-  "rcpl.title.short": "ערכת התחלה לפרויקט אנגולר"
+  "rcpl.title.long": "קליפר מתכון",
+  "rcpl.title.short": "קליפר מתכון"
 }

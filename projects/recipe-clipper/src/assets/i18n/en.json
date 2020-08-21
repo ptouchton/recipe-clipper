@@ -37,6 +37,7 @@
   "rcpl.menu.login": "Sign in",
   "rcpl.menu.logout": "Logout",
   "rcpl.menu.settings": "Settings",
+  "rcpl.menu.myrecipes": "My Recipes",
   "rcpl.settings.animations.elements": "Navigation page elements slide up",
   "rcpl.settings.animations.page": "Navigation whole page transition",
   "rcpl.settings.animations.title": "Animations",
