@@ -73,7 +73,7 @@ export class AuthEffects {
           this.actions$.pipe(
             ofType(authLogout),
             tap(() => {
-              this.router.navigate(['']);
+              // this.router.navigate(['/about']);
               this.auth.logout();
             })
           ),
