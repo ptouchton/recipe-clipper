@@ -60,7 +60,7 @@
     "dotenv": "^8.2.0",
     "express-jwt": "^6.0.0",
     "faunadb": "^2.14.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jwks-rsa": "^1.8.1",
     "netlify-lambda": "^1.6.3",
     "util.promisify": "^1.0.1"
